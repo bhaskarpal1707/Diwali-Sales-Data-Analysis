@@ -2,6 +2,8 @@
 
 **Uncovering Customer Trends, Product Demand & Regional Performance from Diwali Sales Data**
 
+![Image1]()
+
 ---
 
 ## 📋 Objective
