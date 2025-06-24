@@ -1,7 +1,5 @@
-
 # 🛍️ Diwali Sales Data Analysis
 
-## 📌 Subtitle
 **Uncovering Customer Trends, Product Demand & Regional Performance from Diwali Sales Data**
 
 ---
@@ -19,13 +17,13 @@ The objective of this analysis is to perform a detailed **Exploratory Data Analy
 
 ## 🧩 Business Problems Addressed
 
-This EDA solves several real-world business questions:
+Through Exploratory Data Analysis, the following business problems are addressed:
 
-- ✅ Who are the most profitable customer demographics?
-- 📍 Which zones and states drive the most revenue?
-- 🛒 What are the top-performing product categories?
-- 💰 How does purchase behavior affect revenue?
-- ⚠️ Which regions or customer segments need improvement?
+- • Identify the most profitable customer demographics (age, gender, marital status, occupation).
+- • Understand regional sales performance to improve localized promotions.
+- • Determine top-selling product categories and associated sales volumes.
+- • Evaluate the impact of customer behavior (orders, purchase amount) on revenue.
+- • Discover underperforming segments for targeted improvement.
 
 ---
 
@@ -54,62 +52,38 @@ This EDA solves several real-world business questions:
 
 ### 1️⃣ Data Load & Inspection
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+- Load the sales dataset into a Pandas DataFrame.
+- Display the first few rows to understand the data structure.
+- Check the data types and non-null values for each column to identify initial data quality issues.
+- View descriptive statistics to understand the distribution of numerical data.
 
-df = pd.read_csv("Sales.csv")
-
-df.head()
-df.info()
-df.describe(include='all')
 ```
 
 ---
 
 ### 2️⃣ Data Cleaning
 
-```python
-df.drop(columns=["Status", "unnamed1"], inplace=True)
-df.dropna(subset=["Amount"], inplace=True)
-df['Marital_Status'] = df['Marital_Status'].astype(int)
-df['Amount'] = df['Amount'].astype(float)
-```
+- Dropping Unnecessary Columns: Remove irrelevant columns that do not contribute to the analysis (e.g., unnamed1).
+- Handling Missing Values: Identify and handle (e.g., drop) rows with missing values to ensure data integrity for analysis.
+- Correcting Data Types: Convert columns to appropriate data types if necessary (e.g., Marital_Status to integer, Amount to float).
 
 ---
 
 ### 3️⃣ Exploratory Data Analysis (EDA)
 
-#### Demographics and Behavior
-
-```python
-df['Gender'].value_counts()
-df.groupby("Age Group")["Orders"].sum().sort_values(ascending=False)
-```
-
-#### Regional Analysis
-
-```python
-df.groupby("Zone")["Amount"].sum().sort_values(ascending=False)
-df.groupby("State")["Orders"].sum().sort_values(ascending=False)
-```
-
-#### Product Analysis
-
-```python
-df.groupby("Product_Category")["Amount"].sum().sort_values(ascending=False)
-df['Product_ID'].value_counts().head(10)
-```
-
-#### Visualizations
-
-```python
-sns.set(style="whitegrid")
-df.groupby("Zone")["Amount"].sum().sort_values().plot(kind="bar", figsize=(8,5), color="skyblue", title="Sales by Zone")
-plt.ylabel("Sales Amount")
-plt.show()
-```
+- Gender Distribution & Gender-wise Total Sales: Analyze the number of buyers and total sales amount for each gender.
+- Age Group Distribution & Age Group-wise Total Sales: Examine the distribution of sales across different age groups and their total sales contributions.
+- State-wise Total Orders & Sales: Identify the top-performing states based on the number of orders and total sales amount.
+- Marital Status & Sales: Analyze the total sales amount based on the marital status of the customers.
+- Occupation & Sales: Visualize and understand the total sales amount across various occupations.
+- Product Category & Sales: Determine the top-selling product categories by total sales amount.
+- Top 10 Most Sold Products: Identify and display the top 10 products based on the number of orders.
+- Orders vs Amount Scatter Plot: Visualize the relationship between the number of orders and the total amount spent.
+- Top 10 Customers by Sales: Identify and analyze the highest-spending customers.
+- Average Order Value by State (Top 10): Calculate and visualize the average amount spent per order in the top states.
+- Age Distribution Histogram: Visualize the distribution of customer ages.
+- Repeat Customers Count Distribution: Analyze the frequency of purchases by customers.
+- Correlation Heatmap (Age, Orders, Amount): Visualize the correlation between numerical variables to understand their relationships.
 
 ---
 
