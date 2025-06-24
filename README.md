@@ -136,13 +136,13 @@ This project uses EDA to derive actionable insights from Diwali sales data. It s
 ## 📂 Repository Structure
 
 ```
+---
+---
 📁 Diwali-Sales-Analysis/
 ├── Sales.csv
 ├── Sales Analysis.ipynb
 ├── README.md
-└── Visuals/
-```
-
+└── 
 ---
 ## 📬 Contact
 
