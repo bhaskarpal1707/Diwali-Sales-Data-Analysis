@@ -2,7 +2,7 @@
 
 **Uncovering Customer Trends, Product Demand & Regional Performance from Diwali Sales Data**
 
-![Image1]()
+![Image1](https://github.com/bhaskarpal1707/Diwali-Sales-Data-Analysis/blob/main/Image1.jpg?raw=true)
 
 ---
 
@@ -58,6 +58,8 @@ Through Exploratory Data Analysis, the following business problems are addressed
 - Display the first few rows to understand the data structure.
 - Check the data types and non-null values for each column to identify initial data quality issues.
 - View descriptive statistics to understand the distribution of numerical data.
+
+![Image2](https://github.com/bhaskarpal1707/Diwali-Sales-Data-Analysis/blob/main/Image2.jpg?raw=true)
 
 ```
 
